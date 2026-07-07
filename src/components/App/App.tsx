@@ -25,6 +25,7 @@ export default function App() {
       const result = await fetchMovies(query);
       setMovies(result);
       if (result.length === 0) {
+        toast.error("No movies found for your request.");
         setErrorText(true)
       }
     } catch {
